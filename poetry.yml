@@ -1,0 +1,15 @@
+name: 'pp'
+description: 'Set up Python with Poetry'
+runs:
+  using: "composite"
+  steps:
+  - uses: actions/checkout@v4
+  - name: Set up Python 3.12
+    uses: actions/setup-python@v5
+    with:
+      python-version: '3.12'
+  - name: Install poetry
+    run: |
+      python3 -m pip install --user pipx
+      python3 -m pipx ensurepath
+      pipx install poetry
