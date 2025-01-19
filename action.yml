@@ -9,6 +9,7 @@ runs:
     with:
       python-version: '3.12'
   - name: Install poetry
+    shell: bash
     run: |
       python3 -m pip install --user pipx
       python3 -m pipx ensurepath
